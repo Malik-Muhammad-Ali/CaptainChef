@@ -36,7 +36,7 @@ const Plans = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        border: "2px solid black",
+        // border: "2px solid black",
       }}
     >
       {/* Header Box */}
@@ -179,7 +179,7 @@ const Plans = () => {
                 xs: "18px 2px", // For small screens (mobile)
                 sm: "12px 0px", // For larger screens (tablet and above)
               },
-              marginLeft: "4px",
+              marginLeft: { xs: "4px", sm: "0" },
               borderRadius: "12px",
               cursor: "pointer",
               fontSize: { xs: "12px", sm: "14px" },
@@ -202,7 +202,7 @@ const Plans = () => {
                 xs: "18px 10px", // For small screens (mobile)
                 sm: "12px 0px", // For larger screens (tablet and above)
               },
-              marginRight: "4px",
+              marginRight: { xs: "4px", sm: "0" },
               borderRadius: "12px",
               cursor: "pointer",
               fontSize: { xs: "12px", sm: "14px" },
