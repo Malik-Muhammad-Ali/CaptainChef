@@ -12,11 +12,17 @@ import { useNavigate } from "react-router-dom";
 const getFilteredItems = (items) => {
   return items.filter((item) => Number(item.value) > 0);
 };
+// const getFilteredDelivery = (delivery) => {
+//   return delivery.filter((deliver) => Number(deliver.delivery_charges));
+// };
 
-const PlanCard = ({ plan, planID, days, items }) => {
+const PlanCard = ({ plan, planID, days, items, delivery, range }) => {
   const filteredItems = getFilteredItems(items);
+  // const filteredDelivery = getFilteredDelivery(delivery);
   const navigate = useNavigate();
-  console.log(filteredItems);
+  console.log(days);
+  console.log(range);
+
   const features = [
     <svg
       width="20"
@@ -204,6 +210,7 @@ const PlanCard = ({ plan, planID, days, items }) => {
       />
     </svg>,
   ];
+
   return (
     <Grid2
       sx={{
@@ -369,7 +376,9 @@ const PlanCard = ({ plan, planID, days, items }) => {
             </Box>
 
             {/* Delivery Box */}
+            {/* {filteredDelivery.map((delivery, index) => ( */}
             <Box
+              // key={index}
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -382,9 +391,10 @@ const PlanCard = ({ plan, planID, days, items }) => {
                 variant="body2"
                 sx={{ fontSize: "0.7rem", textAlign: "center" }}
               >
-                {days} SR
+                SR
               </Typography>
             </Box>
+            {/* ))} */}
 
             {/* Dynamically render filtered items */}
             {filteredItems.map((item, index) => (
